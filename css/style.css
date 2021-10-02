@@ -52,17 +52,17 @@ body {
 .header {
   height: 100vh; }
   .header__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0; }
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+    .header__menu-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0; }
   .header__logo {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: "Ubuntu", sans-serif;
-    color: #050C16;
+    color: #3F83C4;
     font-weight: bold; }
-  .header__nav {
-    height: 5vh; }
   .header__items {
     display: flex;
     list-style: none; }
@@ -71,8 +71,9 @@ body {
   .header__item a {
     color: #777;
     position: relative;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #000;
     text-decoration: none;
     transition: all 0.2s; }
     .header__item a::after {
@@ -92,6 +93,7 @@ body {
     height: 70vh;
     width: 100%;
     position: relative;
+    background-color: #C4D8F1;
     /* On hover, add a black background color with a little bit see-through */ }
     .header__section .image_1 {
       background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/1.jpg"); }
@@ -110,7 +112,7 @@ body {
         display: flex;
         align-items: center; }
         .header__section .mySlides__container .text {
-          font-size: 3.5rem;
+          font-size: 2.5rem;
           color: white;
           text-transform: uppercase;
           letter-spacing: 0.5rem; }
@@ -119,8 +121,8 @@ body {
       cursor: pointer;
       position: absolute;
       top: 50%;
+      transform: translateY(-50%);
       width: auto;
-      margin-top: -22px;
       padding: 16px;
       color: white;
       font-weight: bold;
@@ -129,7 +131,10 @@ body {
       border-radius: 0 3px 3px 0;
       user-select: none; }
     .header__section .next {
-      right: 0;
+      right: 3rem;
+      border-radius: 3px 0 0 3px; }
+    .header__section .prev {
+      left: 3rem;
       border-radius: 3px 0 0 3px; }
     .header__section .prev:hover,
     .header__section .next:hover {
@@ -163,13 +168,11 @@ body {
 
 .btn {
   font-size: 1.5rem;
-  border-radius: 10px;
   padding: .5rem 1.5rem;
   background-color: transparent;
   color: #3F83C4;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
   border: 2px solid #3F83C4;
   cursor: pointer;
   transition: all .5s; }
