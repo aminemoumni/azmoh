@@ -1,80 +1,179 @@
 .header {
-    &__menu {
-        display: flex;
-        // justify-content: space-between;
-        align-items: center;
+    height: 100vh;
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+
+  &__logo {
+    font-size: 2rem;
+    font-family: $font-display;
+    color: $color-primary-dark;
+    font-weight: bold;
+  }
+
+  &__nav {
+    // margin: 0 auto;
+    height: 5vh;
+    nav {
+    }
+  }
+
+  &__items {
+    display: flex;
+    list-style: none;
+    // width: 100%;
+    // background-color: $color-primary-light;
+  }
+  &__item {
+    // flex: 0 0 25%;
+    &:not(:last-child) {
+      margin-right: 3rem;
     }
 
-    &__logo {
-        font-size: 3rem;
+    & a {
+      color: $color-grey-dark;
+      position: relative;
+      font-size: 2rem;
+      font-weight: 600;
+      // padding: .5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background-color: $color-primary;
+        transition: all 0.2s;
+      }
+      &:hover {
         color: $color-primary;
-        font-weight: bold;
-        position: relative;
-        margin-right: 8px;
 
         &::after {
-            content: "";
-            position: absolute;
-            right: -3rem;
-            top: 50%;
-            background-color: $color-primary;
-            transform: translateY(-50%);
-            width: 2px;
-            height: 50%;
+          width: 100%;
         }
-
+      }
     }
+  }
 
-    &__nav {
-        // margin: 0 auto;
-        flex: 1;
-        nav {
+  // section
 
-        }
+  &__section {
+    height: 70vh;
+    width: 100%;
+    position: relative;
+
+    & .image_1 {
+      background-image: linear-gradient(rgba(#000, 0.8), rgba(#000, 0.8)),
+        url("../images/1.jpg");
     }
+    & .image_2 {
+      background-image: linear-gradient(rgba(#000, 0.8), rgba(#000, 0.8)),
+        url("../images/2.jpg");
+    }
+    & .image_3 {
+      background-image: linear-gradient(rgba(#000, 0.8), rgba(#000, 0.8)),
+        url("../images/3.jpg");
+    }
+    & .mySlides {
+      display: none;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      //   position: relative;
 
-    &__items {
+      &__container {
+        height: 100%;
         display: flex;
-        justify-content: space-between;
-        list-style: none;
-        width: 100%;
-        background-color: $color-primary-light;
-
-    }
-    &__item {
-        flex: 0 0 25%;
-        &:not(:last-child){
-            margin-right: 3rem;
-        }
-
-        & a {
-            color: $color-grey-dark;
-            position: relative;
-            font-size: 1.8rem;
-            font-weight: 600;
-            // padding: .5rem;
-            text-decoration: none;
-            transition: all .2s;
+        align-items: center;
+        & .text {
+          // position: absolute;
+          // top: 50%;
+          // left: 50%;
+          // transform: translate(-50%,-50%);
+          // max-width: 114rem;
             
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -4px;
-                width: 0%;
-                height: 2px;
-                background-color:$color-primary;
-                transition: all .2s;
-            }
-            &:hover {
-                color: $color-primary;
-                
-                &::after {
-                    width: 100%;
-                }
-            }
+          font-size: $h2-size;
+          color: $color-white;
+          text-transform: uppercase;
+          letter-spacing: 0.5rem;
         }
+      }
     }
 
+    & .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    & .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    & .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    & .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+  }
+
+  &__icon {
+      margin-top: 4rem;
+      & ul {
+          list-style: none;
+          display: flex;
+          justify-content: space-around;
+
+          & li {
+
+            & i {
+                font-size: 8rem;
+                color: $color-primary;
+            }
+          }
+      }
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
